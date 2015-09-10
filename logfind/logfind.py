@@ -5,11 +5,13 @@ from sets import Set
 def run():
     file_with_duplicates = open('C:\Users\MiukoAdmin\projects\logfind\matching_files_with_duplicates.txt', 'w+')
     file_with_duplicates.close()
+    
     with open('C:\Users\MiukoAdmin\projects\.logfind', 'r') as file_with_regex:
         string_with_regex = file_with_regex.readline()
+        
     if sys.argv[1] == "-o":  
+        pattern_arguments = ""
         for arg in range(2,len(sys.argv)-1):
-            pattern_arguments = ""
             pattern_arguments += "\\b" + sys.argv[arg] + "\\b" + ","
         pattern_arguments += "\\b" + sys.argv[len(sys.argv)-1] + "\\b"
        
