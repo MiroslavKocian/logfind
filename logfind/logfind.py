@@ -25,7 +25,7 @@ def run():
     else:
         patterns = ""
         for arg in range(1,len(sys.argv)):
-            patterns += " | Select-String -Pattern " + sys.argv[arg]
+            patterns += " | Select-String -Pattern " + "\\b" + sys.argv[arg] + "\\b"
        
        
         p = subprocess.Popen(["powershell.exe",
